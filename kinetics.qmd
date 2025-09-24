@@ -134,32 +134,4 @@ $$\boxed{\frac{\partial f}{\partial t} + \mathbf{u} \cdot \nabla_\mathbf{x} f + 
 
 这就是**Boltzmann方程**。因此Vlasov方程也称为无碰撞Boltzmann方程。
 
-### 二体碰撞
-上一节我们引入了抽象的碰撞项，接下来我们要讨论如何具体地表征碰撞。
-
-我们研究最理想化的**二体弹性碰撞**。该碰撞过程满足：
-
-质量守恒：
-
-$$
-M=m_{1}+m_{2}=m_{1}^{\prime}+m_{2}^{\prime}
-$$ {#eq-massconserve}
-
-动量守恒：
-
-$$
-M\mathbf{V}=m_{1}\mathbf{u}_{1}+m_{2}\mathbf{u}_{2}=m_{1}\mathbf{u}_{1}^{\prime}+m_{2}\mathbf{u}_{2}^{\prime}
-$$ {#eq-momentumconserve}
-
-能量守恒：
-
-$$
-E=\frac{1}{2}m_{1}u_{1}^{2}+\frac{1}{2}m_{2}u_{2}^{2}=\frac{1}{2}m_{1}u_{1}^{\prime 2}+\frac{1}{2}m_{2}u_{2}^{\prime 2}
-$$ {#eq-energyconserve}
-
-注意我们研究的碰撞前后两个粒子的质量都是不变的，因此在 @eq-momentumconserve、@eq-energyconserve 中并没有使用$m_{1}^{\prime}$、$m_{2}^{\prime}$.
-
-在 @eq-momentumconserve 中，我们引入了质心速度$\mathbf{V}$. 再引入两个新变量：
-
-相对速度：
 
