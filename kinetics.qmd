@@ -80,7 +80,7 @@ $$\mathbf{x}=\mathbf{x}_0 +\mathbf{u}_0 dt$$ {#eq-trajectory1}
 $$\mathbf{u}=\mathbf{u}_0 + \mathbf{a}(\mathbf{x}_{0}, t_{0})dt$$ {#eq-trajectory2}
 考虑一体积元$\mathrm{d}^{6}V_{0}=\mathrm{d}^{3}x_{0}\mathrm{d}^{3}u_{0}$，沿着该轨迹移动到相空间上的新位置，成为新的体积元$\mathrm{d}^{6}V=\mathrm{d}^{3}x\mathrm{d}^{3}u$. 新体积元与原体积元之间由Jacobi行列式联系：
 $$\mathrm{d}^{6}V=|\mathbb{J}|\mathrm{d}^{6}V_{0}$$ {#eq-JacobiLink}
-$$\mathbb{J}=\frac{\partial(\mathbf{x},\mathbf{u})}{\partial(\mathbf{x}_0,\mathbf{u}_0)}=\begin{pmatrix}\frac{\partial\mathbf{x}}{\partial\mathbf{x}_0}&\frac{\partial\mathbf{x}}{\partial\mathbf{u}_0}\\\frac{\partial\mathbf{u}}{\partial\mathbf{x}_0}&\frac{\partial\mathbf{u}}{\partial\mathbf{u}_0}\end{pmatrix}=\begin{pmatrix}I&\mathrm{d}t\operatorname{}I\\\mathrm{d}t\operatorname{}\frac{\partial\mathbf{a}}{\partial\mathbf{x}}&I\end{pmatrix}$$ {#eq-JacobiMetrix}
+$$\mathbb{J}=\frac{\partial(\mathbf{x},\mathbf{u})}{\partial(\mathbf{x}_0,\mathbf{u}_0)}=\begin{pmatrix}\frac{\partial\mathbf{x}}{\partial\mathbf{x}_0}&\frac{\partial\mathbf{x}}{\partial\mathbf{u}_0}\\\frac{\partial\mathbf{u}}{\partial\mathbf{x}_0}&\frac{\partial\mathbf{u}}{\partial\mathbf{u}_0}\end{pmatrix}=\begin{pmatrix}\mathbb{I}&\mathrm{d}t\operatorname{}\mathbb{I}\\\mathrm{d}t\operatorname{}\frac{\partial\mathbf{a}}{\partial\mathbf{x}}&\mathbb{I}\end{pmatrix}$$ {#eq-JacobiMetrix}
 
 注意，此处的Jacobi矩阵是用分块矩阵的形式写出的，每一个“元素”实际上都是一个$3\times 3$矩阵，因此它实际上是一个$6\times 6$矩阵。
 
@@ -93,9 +93,9 @@ $$\frac{\partial u_{i}}{\partial x_{0j}}=\frac{\partial a_{i}}{\partial x_{0j}}\
 下面进行Jacobi行列式$|\mathbb{J}|$的计算。利用Schur补公式，对于分块行列式$\mathrm{det}\begin{pmatrix}A&B\\C&D\end{pmatrix}$，若矩阵A可逆，有
 $$\mathrm{det}\begin{pmatrix}A&B\\C&D\end{pmatrix}=\mathrm{det}(A)\mathrm{det}(D-CA^{-1}B)$$ {#eq-Schur}
 可以得到
-$$|\mathbb{J}|=\mathrm{det}(I-\mathrm{d}t^{2}\frac{\partial\mathbf{a}}{\partial\mathbf{x}})$$ {#eq-JacobiCal1}
+$$|\mathbb{J}|=\mathrm{det}(\mathbb{I}-\mathrm{d}t^{2}\frac{\partial\mathbf{a}}{\partial\mathbf{x}})$$ {#eq-JacobiCal1}
 使用小量展开，当$\epsilon$很小时，
-$$\mathrm{det}(I+\epsilon M)=1+\epsilon \mathrm{tr}M+O(\epsilon^2)$$ {#eq-small}
+$$\mathrm{det}(\mathbb{I}+\epsilon M)=1+\epsilon \mathrm{tr}M+O(\epsilon^2)$$ {#eq-small}
 由此得到
 $$|\mathbb{J}|=1-\mathrm{d}t^{2}(\nabla_{\mathbf{x}}\cdot\mathbf{a})+O(\mathrm{d}t^4)$$ {#eq-JacobiCal2}
 这里利用了$\frac{\partial\mathbf{a}}{\partial\mathbf{x}}$的迹是$\nabla_{\mathbf{x}}\cdot\mathbf{a}$.
@@ -162,4 +162,24 @@ $$ {#eq-energyconserve}
 在 @eq-momentumconserve 中，我们引入了质心速度$\mathbf{V}$. 再引入两个新变量：
 
 相对速度：
+
+$$
+\mathbf{v}=\mathbf{u}_{1}-\mathbf{u}_{2}
+$$ {#eq-relativevelocity}
+
+约化质量：
+
+$$
+\tilde{m}=\frac{m_{1}m_{2}}{m_{1}+m_{2}}
+$$ {#eq-reducedmass}
+
+于是有：
+
+$$
+\mathbf{u_{1}}=\mathbf{V}+\frac{m_{2}}{m_{1}+m_{2}}\mathbf{v}
+$$ {#eq-u1}
+
+$$
+\mathbf{u_{2}}=\mathbf{V}-\frac{m_{1}}{m_{1}+m_{2}}\mathbf{v}
+$$ {#eq-u2}
 
