@@ -290,6 +290,11 @@ E=\frac{1}{2}m_{1}u_{1}^{2}+\frac{1}{2}m_{2}u_{2}^{2}=\frac{1}{2}m_{1}u_{1}^{\pr
 <p><span id="eq-u2"><span class="math display">\[
 \mathbf{u_{2}}=\mathbf{V}-\frac{m_{1}}{m_{1}+m_{2}}\mathbf{v}
 \tag{1.41}\]</span></span></p>
+<p>从物理上看，这是将粒子的速度分解为了<strong>质心速度</strong>和<strong>相对于质心的速度</strong>两部分；而数学上看，这定义了<strong><span class="math inline">\((\mathbf{V},\mathbf{v})\rightarrow(\mathbf{u}_{1},\mathbf{u}_{2})\)</span>的线性变换</strong>。该变换的Jacobi矩阵为：</p>
+<p><span id="eq-jmatrix"><span class="math display">\[
+\mathbb{J}=\frac{\partial(\mathbf{u}_{1},\mathbf{u}_{2})}{\partial(\mathbf{V},\mathbf{v})}=\begin{pmatrix}\frac{\partial\mathbf{u}_{1}}{\partial\mathbf{V}}&amp;\frac{\partial\mathbf{u}_{1}}{\partial\mathbf{v}}\\\frac{\partial\mathbf{u}_{2}}{\partial\mathbf{V}}&amp;\frac{\partial\mathbf{u}_{2}}{\partial\mathbf{v}}\end{pmatrix}=\begin{pmatrix}\mathbb{I}&amp;\frac{m_{2}}{m_{1}+m_{2}}\\\mathbb{I}&amp;-\frac{m_{1}}{m_{1}+m_{2}}\end{pmatrix}
+\tag{1.42}\]</span></span></p>
+<p>不难求得<span class="math inline">\(|\mathbb{J}|=-1\)</span>. 故该线性变换是体积守恒的。</p>
 
 
 </section>

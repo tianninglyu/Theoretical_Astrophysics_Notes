@@ -183,3 +183,10 @@ $$
 \mathbf{u_{2}}=\mathbf{V}-\frac{m_{1}}{m_{1}+m_{2}}\mathbf{v}
 $$ {#eq-u2}
 
+从物理上看，这是将粒子的速度分解为了**质心速度**和**相对于质心的速度**两部分；而数学上看，这定义了**$(\mathbf{V},\mathbf{v})\rightarrow(\mathbf{u}_{1},\mathbf{u}_{2})$的线性变换**。该变换的Jacobi矩阵为：
+
+$$ 
+\mathbb{J}=\frac{\partial(\mathbf{u}_{1},\mathbf{u}_{2})}{\partial(\mathbf{V},\mathbf{v})}=\begin{pmatrix}\frac{\partial\mathbf{u}_{1}}{\partial\mathbf{V}}&\frac{\partial\mathbf{u}_{1}}{\partial\mathbf{v}}\\\frac{\partial\mathbf{u}_{2}}{\partial\mathbf{V}}&\frac{\partial\mathbf{u}_{2}}{\partial\mathbf{v}}\end{pmatrix}=\begin{pmatrix}\mathbb{I}&\frac{m_{2}}{m_{1}+m_{2}}\\\mathbb{I}&-\frac{m_{1}}{m_{1}+m_{2}}\end{pmatrix}
+$$ {#eq-jmatrix}
+
+不难求得$|\mathbb{J}|=-1$. 故该线性变换是体积守恒的。
